@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>Kotlin_NET.Tests</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -10,11 +10,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CLI.Arguments\Kotlin-NET.CLI.Arguments.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
-      <PackageReference Include="NUnit" Version="3.13.3" />
     </ItemGroup>
 
 </Project>
