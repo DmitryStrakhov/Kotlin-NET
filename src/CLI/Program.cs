@@ -1,7 +1,7 @@
 ﻿using System;
-using Kotlin_NET.CLI.Arguments;
+using Kotlin.NET.CLI.Arguments;
 
-namespace CLI; 
+namespace Kotlin.NET.CLI; 
 
 static class Program {
     public static void Main(string[] args) {

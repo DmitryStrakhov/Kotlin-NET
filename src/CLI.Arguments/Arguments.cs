@@ -1,4 +1,6 @@
-﻿namespace Kotlin_NET.CLI.Arguments; 
+﻿using System;
+
+namespace Kotlin.NET.CLI.Arguments; 
 
 public class CLIArguments {
     private CLIArguments() {

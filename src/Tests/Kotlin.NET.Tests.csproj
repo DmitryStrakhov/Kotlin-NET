@@ -2,14 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-        <RootNamespace>Kotlin_NET.Tests</RootNamespace>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CLI.Arguments\Kotlin-NET.CLI.Arguments.csproj" />
+      <ProjectReference Include="..\CLI.Arguments\Kotlin.NET.CLI.Arguments.csproj" />
     </ItemGroup>
 
     <ItemGroup>

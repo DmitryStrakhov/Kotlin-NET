@@ -1,7 +1,8 @@
-﻿using Kotlin_NET.CLI.Arguments;
+﻿using System;
+using Kotlin.NET.CLI.Arguments;
 using NUnit.Framework;
 
-namespace Kotlin_NET.Tests.CLI; 
+namespace Kotlin.NET.Tests.CLI; 
 
 [TestFixture]
 public class CLIArgumentsTests {
