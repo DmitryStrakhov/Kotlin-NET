@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin-NET.CLI", "src\CLI\Kotlin-NET.CLI.csproj", "{8486D229-2879-4011-94DA-F1BAA06CBDD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.CLI", "src\CLI\Kotlin.NET.CLI.csproj", "{8486D229-2879-4011-94DA-F1BAA06CBDD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin-NET.Tests", "src\Tests\Kotlin-NET.Tests.csproj", "{C4D3EE3C-F6C5-4911-A0C0-98C235BD71C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.Tests", "src\Tests\Kotlin.NET.Tests.csproj", "{C4D3EE3C-F6C5-4911-A0C0-98C235BD71C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin-NET.CLI.Arguments", "src\CLI.Arguments\Kotlin-NET.CLI.Arguments.csproj", "{D087903E-E8E4-49B2-A602-97848EBB37F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.CLI.Arguments", "src\CLI.Arguments\Kotlin.NET.CLI.Arguments.csproj", "{D087903E-E8E4-49B2-A602-97848EBB37F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

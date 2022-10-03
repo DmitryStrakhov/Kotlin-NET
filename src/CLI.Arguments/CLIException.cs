@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kotlin_NET.CLI.Arguments; 
+namespace Kotlin.NET.CLI.Arguments; 
 
 public sealed class CLIException : Exception {
     internal CLIException() {

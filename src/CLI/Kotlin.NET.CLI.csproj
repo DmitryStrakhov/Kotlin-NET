@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CLI.Arguments\Kotlin-NET.CLI.Arguments.csproj" />
+      <ProjectReference Include="..\CLI.Arguments\Kotlin.NET.CLI.Arguments.csproj" />
     </ItemGroup>
 
 </Project>
