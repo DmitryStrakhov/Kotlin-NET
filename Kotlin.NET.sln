@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.Tests", "src\Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.CLI.Arguments", "src\CLI.Arguments\Kotlin.NET.CLI.Arguments.csproj", "{D087903E-E8E4-49B2-A602-97848EBB37F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kotlin.NET.Core", "src\Core\Kotlin.NET.Core.csproj", "{D4EB2D02-418A-4EF8-88B3-96B9159EDEEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{D087903E-E8E4-49B2-A602-97848EBB37F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D087903E-E8E4-49B2-A602-97848EBB37F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D087903E-E8E4-49B2-A602-97848EBB37F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4EB2D02-418A-4EF8-88B3-96B9159EDEEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4EB2D02-418A-4EF8-88B3-96B9159EDEEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4EB2D02-418A-4EF8-88B3-96B9159EDEEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4EB2D02-418A-4EF8-88B3-96B9159EDEEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

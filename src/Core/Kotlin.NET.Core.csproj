@@ -1,16 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <Version>1.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\CLI.Arguments\Kotlin.NET.CLI.Arguments.csproj" />
+      <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
     </ItemGroup>
 
 </Project>
