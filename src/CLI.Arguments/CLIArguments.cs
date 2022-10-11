@@ -7,7 +7,7 @@ namespace Kotlin.NET.CLI.Arguments;
 /*
  * Command-Line format
  * 
- * Kotlin.NET.CLI.exe <filepath> [-t|--type exe|library] [-v|--version] [?|--help]
+ * Kotlin.NET.CLI.exe -t|--type exe|library [--version] [--help] <filepath>
  * FOR EXAMPLE
  * Kotlin.NET.CLI.exe "C:\Code.kt" -t exe
  * Kotlin.NET.CLI.exe --type library "C:\Code.kt"
