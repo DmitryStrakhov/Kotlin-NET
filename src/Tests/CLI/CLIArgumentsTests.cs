@@ -1,4 +1,5 @@
-﻿using Kotlin.NET.CLI.Arguments;
+﻿using FluentAssertions;
+using Kotlin.NET.CLI.Arguments;
 using NUnit.Framework;
 
 namespace Kotlin.NET.Tests.CLI; 
@@ -7,36 +8,41 @@ namespace Kotlin.NET.Tests.CLI;
 public class CLIArgumentsTests {
     [Test]
     public void ValidateGuardTest() {
-        CLIArguments args = new CLIArguments();
-        Assert.Throws<ArgumentNullException>(() => args.Validate(null!));
+        Action action = () => new CLIArguments().Validate(null!);
+        action.Should().Throw<ArgumentNullException>();
     }
     [Test]
     public void FilePathValidationErrorTest1() {
-        CLIArguments args = new CLIArguments();
-        args.FilePath = null;
-        Assert.Throws<CommandLineValidationException>(() => args.Validate(new TestICLIArgumentsValidationContext(_ => false)));
+        Action action = () => {
+            new CLIArguments { FilePath = null }.Validate(new TestICLIArgumentsValidationContext(_ => false));
+        };
+        action.Should().Throw<CommandLineValidationException>();
     }
     [Test]
     public void FilePathValidationErrorTest2() {
-        CLIArguments args = new CLIArguments();
-        args.FilePath = @"path";
-        
-        TestICLIArgumentsValidationContext vc = new TestICLIArgumentsValidationContext(path => {
-            Assert.AreEqual("path", path);
-            return false;
-        });
-        Assert.Throws<CommandLineValidationException>(() => args.Validate(vc));
+        Action action = () => {
+            CLIArguments args = new() { FilePath = @"path" };
+
+            TestICLIArgumentsValidationContext context = new(path => {
+                path.Should().Be("path");
+                return false;
+            });
+            args.Validate(context);
+        };
+        action.Should().Throw<CommandLineValidationException>();
     }
     [Test]
     public void ValidationTest() {
-        CLIArguments args = new CLIArguments();
-        args.FilePath = @"path";
+        Action action = () => {
+            CLIArguments args = new() { FilePath = @"path" };
 
-        TestICLIArgumentsValidationContext vc = new TestICLIArgumentsValidationContext(path => {
-            Assert.AreEqual("path", path);
-            return true;
-        });
-        Assert.DoesNotThrow(() => args.Validate(vc));
+            TestICLIArgumentsValidationContext vc = new(path => {
+                path.Should().Be("path");
+                return true;
+            });
+            args.Validate(vc);
+        };
+        action.Should().NotThrow();
     }
 
     #region TestICLIArgumentsValidationContext

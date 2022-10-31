@@ -1,4 +1,5 @@
 ﻿using System;
+using FluentAssertions;
 using Kotlin.NET.CLI.Arguments;
 using NUnit.Framework;
 
@@ -8,37 +9,42 @@ namespace Kotlin.NET.Tests.CLI;
 public class CLIParserTests {
     [Test]
     public void GuardTest1() {
-        Assert.Throws<ArgumentNullException>(() => CLIParser.Parse(null!));
+        Action action = () => CLIParser.Parse(null!);
+        action.Should().Throw<ArgumentNullException>();
     }
     [Test]
     public void EmptyCommandLineTest() {
-        Assert.Throws<CommandLineFormatException>(() => CLIParser.Parse(Array.Empty<string>()));
+        Action action = () => CLIParser.Parse(Array.Empty<string>());
+        action.Should().Throw<CommandLineFormatException>();
     }
     [Test]
     public void BadlyWrongCommandLineTest1() {
-        Assert.Throws<CommandLineFormatException>(() => CLIParser.Parse(new[] {"blah"}));
+        Action action = () => CLIParser.Parse(new[] {"blah"});
+        action.Should().Throw<CommandLineFormatException>();
     }
     
     [Test]
     public void TypeShortNameTest() {
         CLIArguments args = CLIParser.Parse(new[] {@"C:\Code.kt", "-t", "exe"});
-        Assert.IsNotNull(args);
-        Assert.AreEqual(@"C:\Code.kt", args.FilePath);
-        Assert.AreEqual(OutputType.Exe, args.OutputType);
+        args.Should().NotBeNull();
+        args.FilePath.Should().Be(@"C:\Code.kt");
+        args.OutputType.Should().Be(OutputType.Exe);
     }
     [Test]
     public void TypeLongNameTest() {
         CLIArguments args = CLIParser.Parse(new[] {"--type", "Library", @"C:\File.kt"});
-        Assert.IsNotNull(args);
-        Assert.AreEqual(@"C:\File.kt", args.FilePath);
-        Assert.AreEqual(OutputType.Library, args.OutputType);
+        args.Should().NotBeNull();
+        args.FilePath.Should().Be(@"C:\File.kt");
+        args.OutputType.Should().Be(OutputType.Library);
     }
     [Test]
     public void MissingFilePathTest() {
-        Assert.Throws<CommandLineFormatException>(() => CLIParser.Parse(new[] {"-t", "library"}));
+        Action action = () => CLIParser.Parse(new[] {"-t", "library"});
+        action.Should().Throw<CommandLineFormatException>();
     }
     [Test]
     public void MissingTypeTest() {
-        Assert.Throws<CommandLineFormatException>(() => CLIParser.Parse(new[] {@"C:\Code.kt"}));
+        Action action = () => CLIParser.Parse(new[] {@"C:\Code.kt"});
+        action.Should().Throw<CommandLineFormatException>();
     }
 }
